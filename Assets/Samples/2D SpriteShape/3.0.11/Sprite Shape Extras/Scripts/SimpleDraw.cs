@@ -21,8 +21,8 @@ public class SimpleDraw : MonoBehaviour
     private void Smoothen(SpriteShapeController sc, int pointIndex)
     {
         Vector3 position = sc.spline.GetPosition(pointIndex);
-        Vector3 positionNext = sc.spline.GetPosition(SplineUtility.NextIndex(pointIndex, sc.spline.GetPointCount()));
-        Vector3 positionPrev = sc.spline.GetPosition(SplineUtility.PreviousIndex(pointIndex, sc.spline.GetPointCount()));
+        Vector3 positionNext = sc.spline.GetPosition(Utils.NextIndex(pointIndex, sc.spline.GetPointCount()));
+        Vector3 positionPrev = sc.spline.GetPosition(Utils.PreviousIndex(pointIndex, sc.spline.GetPointCount()));
         Vector3 forward = gameObject.transform.forward;
 
         float scale = Mathf.Min((positionNext - position).magnitude, (positionPrev - position).magnitude) * 0.33f;

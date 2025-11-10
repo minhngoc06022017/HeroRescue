@@ -95,7 +95,7 @@ public class LegacyCollider : MonoBehaviour
 
             for (int i = 0; i < pathPointCount; ++i)
             {
-                int nextIndex = SplineUtility.NextIndex(i, splinePointCount);
+                int nextIndex = Utils.NextIndex(i, splinePointCount);
                 SampleCurve(sc.colliderDetail, sc.spline.GetPosition(i), sc.spline.GetRightTangent(i), sc.spline.GetPosition(nextIndex), sc.spline.GetLeftTangent(nextIndex), ref path);
             }
 

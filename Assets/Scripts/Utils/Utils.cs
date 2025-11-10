@@ -125,6 +125,23 @@ public class Utils
       //  PlayerPrefs.Save();
     }
 
+    #region Spine
+    public static int NextIndex(int index, int pointCount)
+    {
+        return Mod(index + 1, pointCount);
+    }
+
+    public static int PreviousIndex(int index, int pointCount)
+    {
+        return Mod(index - 1, pointCount);
+    }
+
+    private static int Mod(int x, int m)
+    {
+        int r = x % m;
+        return r < 0 ? r + m : r;
+    }
+    #endregion
 
     #region Daily reward
     public static bool IsClaimReward()
